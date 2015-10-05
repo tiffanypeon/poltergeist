@@ -15,6 +15,8 @@ module Capybara::Poltergeist
     attr_reader :server, :client, :logger
 
     def initialize(server, client, logger = nil)
+      Rails.logger.info "Server, client, logger = #{server}, #{client}, #{logger}"
+      puts "Server, client, logger = #{server}, #{client}, #{logger}"
       @server = server
       @client = client
       @logger = logger
@@ -30,6 +32,8 @@ module Capybara::Poltergeist
     end
 
     def visit(url)
+      Rails.logger.info "URL: #{url}"
+      puts "URL: #{url}"
       command 'visit', url
     end
 
